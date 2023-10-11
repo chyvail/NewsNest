@@ -1,5 +1,49 @@
 // dom content loaded event listener
 document.addEventListener("DOMContentLoaded", () => {
+  let apiKey = "545d54d22a1d2e11994701336242a056";
+  let apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}`;
+  let links = document.querySelectorAll("li");
+  links.forEach((individualLink) => {
+    individualLink.addEventListener("click", () => {
+      console.log(individualLink.id);
+      fetch(`${apiUrl}&categories=${individualLink.id}`)
+        .then((res) => res.json())
+        .then((latestData) => mapStories(latestData));
+    });
+  });
+
+  const mapStories = (latestData) => {
+    console.log(latestData);
+    let storiesRender = document.querySelector("#stories");
+    latestData.data.forEach((element) => {
+      storiesRender.innerHTML += `
+        <div class="col-sm-3 d-flex flex-column">
+            <div class="card flex-fill">
+              <img class="card-img-top" src=${element.image} alt=@${element.author} />
+              <div class="card-body">
+                <h6>${element.title}</h6>
+                <p class="card-text">${element.description}</p>
+                <div class="card-author">
+                    <p class="card-text mt-2">${element.published_at}</p>
+                    <p class="card-text mt-2">~ ${element.author}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="icons">
+                <div class="like">
+                    <i id="like-icon" class="fa-regular fa-heart"></i>
+                    <p class="count">12</p>
+                </div>
+                <div class="like">
+                    <i id="bookmark-icon" class="fa-regular fa-bookmark"></i>
+                    <p class="count">12</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    `;
+    });
+  };
   /* let apiKey = "545d54d22a1d2e11994701336242a056";
   let apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}`;
   fetch(apiUrl)
