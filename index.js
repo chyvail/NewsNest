@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const mapStories = (latestData) => {
-    console.log(latestData);
+    console.log(latestData.data.length);
     let storiesRender = document.querySelector("#stories");
+    let storiesCount = document.querySelector("#stories-count");
+    storiesCount.textContent = `Latest Stories(${latestData.data.length})`
     latestData.data.forEach((element) => {
       storiesRender.innerHTML += `
         <div class="col-sm-3 d-flex flex-column">
