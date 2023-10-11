@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(latestData.data.length);
     let storiesRender = document.querySelector("#stories");
     let storiesCount = document.querySelector("#stories-count");
+    storiesRender.innerHTML = "";
     latestData.data.forEach((element) => {
       storiesCount.textContent = `Latest ${element.category} stories(${latestData.data.length})`;
       let dateFormat = element.published_at.slice(0,10)
