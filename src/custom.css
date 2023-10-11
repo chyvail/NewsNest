@@ -114,7 +114,7 @@ p {
 }
 
 .card {
-  cursor: pointer;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.06);
 }
 
 .card-text {
@@ -137,9 +137,39 @@ p {
   justify-content: space-between;
 }
 
+.icons {
+  color: var(--primary-color);
+}
+
+.like i {
+  cursor: pointer;
+}
+
 hr {
   margin-top: 0;
   margin-bottom: 1em;
+}
+
+.icons {
+  margin-bottom: 1rem;
+}
+
+.like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like p {
+  color: var(--primary-color);
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .more-news {
