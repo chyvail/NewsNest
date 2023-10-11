@@ -113,6 +113,35 @@ p {
   color: var(--white);
 }
 
+.card {
+  cursor: pointer;
+}
+
+.card-text {
+  color: var(--gray-light);
+  font-size: 12px;
+}
+
+.card-img-top {
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-body h6 {
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.card-author {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
 .more-news {
   background: var(--primary-color);
   color: var(--white);
