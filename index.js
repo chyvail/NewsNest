@@ -16,8 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(latestData.data.length);
     let storiesRender = document.querySelector("#stories");
     let storiesCount = document.querySelector("#stories-count");
-    storiesCount.textContent = `Latest Stories(${latestData.data.length})`
     latestData.data.forEach((element) => {
+      storiesCount.textContent = `Latest ${element.category} stories(${latestData.data.length})`;
+      let dateFormat = element.published_at.slice(0,10)
       storiesRender.innerHTML += `
         <div class="col-sm-3 d-flex flex-column">
             <div class="card flex-fill">
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h6>${element.title}</h6>
                 <p class="card-text">${element.description}</p>
                 <div class="card-author">
-                    <p class="card-text mt-2">${element.published_at}</p>
+                    <p class="card-text mt-2">${dateFormat}</p>
                     <p class="card-text mt-2">~ ${element.author}</p>
                 </div>
               </div>
