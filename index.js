@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <i id="like-icon" class="fa-regular fa-heart"></i>
                     <p class="count">0</p>
                 </div>
-                <div class="bookmark">
+                <div class="like">
                     <i id="bookmark-icon" class="fa-regular fa-bookmark"></i>
                     <p class="count">0</p>
                 </div>
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return new bootstrap.Toast(toastEl);
           });
           toastList.forEach((toast) => toast.show());
-          
+
         });
       };
 

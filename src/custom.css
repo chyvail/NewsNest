@@ -178,6 +178,14 @@ hr {
   padding: 15px;
   text-align: center;
 }
+
+.toast-header {
+  color: var(--primary-color);
+}
+
+.toast-body p{
+  color: var(--black) !important;
+}
 @media screen and (max-width: 600px) {
   .nav-bar {
     justify-content: end;
