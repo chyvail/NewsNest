@@ -48,8 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     });
   };
-  /* let apiKey = "545d54d22a1d2e11994701336242a056";
-  let apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}`;
+
   fetch(apiUrl)
     .then((res) => res.json())
     .then((featuredData) => mapData(featuredData));
@@ -80,5 +79,5 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${featuredData.data[2].description}</p>
     </div>
     `;
-  }; */
+  }; 
 });
