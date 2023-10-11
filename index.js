@@ -1,19 +1,13 @@
 // dom content loaded event listener
 document.addEventListener("DOMContentLoaded", () => {
-  let apiKey = "545d54d22a1d2e11994701336242a056";
+  /* let apiKey = "545d54d22a1d2e11994701336242a056";
   let apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}`;
-
-  // Fetch data
-
   fetch(apiUrl)
     .then((res) => res.json())
     .then((featuredData) => mapData(featuredData));
 
   const mapData = (featuredData) => {
     console.log(featuredData.data);
-
-    // Carousel Data
-
     let carouselOne = document.querySelector("#carousel-one-text");
     let carouselTwo = document.querySelector("#carousel-two-text");
     let carouselThree = document.querySelector("#carousel-three-text");
@@ -38,7 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${featuredData.data[2].description}</p>
     </div>
     `;
-
-    
-  };
+  }; */
 });
