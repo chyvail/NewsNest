@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     storiesRender.innerHTML = "";
     latestData.data.forEach((element) => {
       storiesCount.textContent = `Latest ${element.category} stories(${latestData.data.length})`;
-      let dateFormat = element.published_at.slice(0,10)
+      let dateFormat = element.published_at.slice(0, 10);
       storiesRender.innerHTML += `
         <div class="col-sm-3 d-flex flex-column">
             <div class="card flex-fill">
@@ -36,16 +36,40 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="icons">
                 <div class="like">
                     <i id="like-icon" class="fa-regular fa-heart"></i>
-                    <p class="count">12</p>
+                    <p class="count">0</p>
                 </div>
-                <div class="like">
+                <div class="bookmark">
                     <i id="bookmark-icon" class="fa-regular fa-bookmark"></i>
-                    <p class="count">12</p>
+                    <p class="count">0</p>
                 </div>
               </div>
             </div>
         </div>
     `;
+
+      // Update count on heart
+      const countUpdate = () => {
+        let like = document.querySelector("#like-icon");
+        let likeCount = parseInt(
+          like.parentElement.children[1].textContent,
+          10
+        );
+        like.addEventListener("click", () => {
+          like.classList.toggle("fa-solid");
+          like.parentElement.children[1].textContent = likeCount += 1;
+
+          /* Bootstrap Toast */
+
+          var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+          var toastList = toastElList.map(function (toastEl) {
+            return new bootstrap.Toast(toastEl);
+          });
+          toastList.forEach((toast) => toast.show());
+          
+        });
+      };
+
+      countUpdate();
     });
   };
 
@@ -79,5 +103,5 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${featuredData.data[2].description}</p>
     </div>
     `;
-  }; 
+  };
 });
