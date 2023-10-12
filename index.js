@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     latestData.data.forEach((element) => {
       storiesCount.textContent = `Latest ${element.category} stories(${latestData.data.length})`;
       let dateFormat = element.published_at.slice(0, 10);
+      if (element.image == null) {
+        element.image =
+          "https://img.freepik.com/free-photo/top-view-old-french-newspaper-pieces_23-2149318857.jpg?w=1800&t=st=1697118921~exp=1697119521~hmac=a7cbfebd6578b839daf35fd4850eec18106aa1152927e8f33305175ef357cdaf";
+      }
       storiesRender.innerHTML += `
         <div class="col-sm-3 d-flex flex-column">
             <div class="card flex-fill">
