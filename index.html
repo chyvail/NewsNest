@@ -28,8 +28,8 @@
             <li id="science" class="ul-padding">Science</li>
             <li id="sports" class="ul-padding">Sports</li>
             <li id="technology" class="ul-padding">Technology</li>
-            <div id="search-query" class="ul-padding">
-              <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="ul-padding">
+              <i id="search-query" class="fa-solid fa-magnifying-glass"></i>
             </div>
           </ul>
           <div class="hamburger-button d-md-none d-lg-none d-xl-none">
@@ -42,19 +42,20 @@
     <!-- Search Modal -->
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Search For an Article</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="search-article" class="col-form-label">Search</label>
-                <input type="text" class="form-control" id="search-article">
+                <div class="text-center mb-3">
+                  <label for="search-article" class="col-form-label">Search For An Article</label>
+                </div>
+                <input type="text" class="form-control mb-3 custom-form" id="search-article">
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary">Search</button>
+                  <button type="submit" class="w-100 btn custom-button">Search</button>
                 </div>
               </div>
             </form>
