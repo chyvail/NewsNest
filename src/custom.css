@@ -154,13 +154,15 @@ hr {
   margin-bottom: 1rem;
 }
 
-.like {
+.like,
+.bookmark {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.like p {
+.like p,
+.bookmark p {
   color: var(--primary-color);
   font-size: 10px;
   margin-left: 4px;
@@ -183,7 +185,7 @@ hr {
   color: var(--primary-color);
 }
 
-.toast-body p{
+.toast-body p {
   color: var(--black) !important;
 }
 @media screen and (max-width: 600px) {

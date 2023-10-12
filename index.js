@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <hr>
               <div class="icons">
-                <div class="like">
+                <div id="like" class="like">
                     <i id="like-icon" class="fa-regular fa-heart"></i>
                     <p class="count">0</p>
                 </div>
-                <div class="like">
+                <div class="bookmark">
                     <i id="bookmark-icon" class="fa-regular fa-bookmark"></i>
                     <p class="count">0</p>
                 </div>
@@ -49,23 +49,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Update count on heart
       const countUpdate = () => {
-        let like = document.querySelector("#like-icon");
-        let likeCount = parseInt(
-          like.parentElement.children[1].textContent,
-          10
-        );
-        like.addEventListener("click", () => {
-          like.classList.toggle("fa-solid");
-          like.parentElement.children[1].textContent = likeCount += 1;
+        let like = document.querySelectorAll("#like-icon");
 
-          /* Bootstrap Toast */
+        like.forEach((element) => {
+          element.addEventListener("click", () => {
+            if (element.classList.contains("fa-solid")) {
+            } else {
+              element.classList.toggle("fa-solid");
+            }
+            let likeCount = parseInt(
+              element.nextElementSibling.textContent,
+              10
+            );
+            element.nextElementSibling.textContent = likeCount += 1;
+            /* Bootstrap Toast */
 
-          var toastElList = [].slice.call(document.querySelectorAll(".toast"));
-          var toastList = toastElList.map(function (toastEl) {
-            return new bootstrap.Toast(toastEl);
+            var toastElList = [].slice.call(
+              document.querySelectorAll(".toast")
+            );
+            var toastList = toastElList.map(function (toastEl) {
+              return new bootstrap.Toast(toastEl);
+            });
+            toastList.forEach((toast) => toast.show());
           });
-          toastList.forEach((toast) => toast.show());
-
         });
       };
 
