@@ -12,6 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Search Functionality
+
+  let searchIcon = document.querySelector("#search-query");
+  let modal = new bootstrap.Modal(document.getElementById("exampleModal"));
+  console.log(searchIcon);
+  searchIcon.addEventListener("click", () => {
+    modal.show();
+  });
+
+  let form = document.querySelector("form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let searchValue = e.target.querySelector("#search-article").value;
+    fetch(`${apiUrl}&keywords=${searchValue}`)
+    .then((res) => res.json())
+    .then((latestData) => mapStories(latestData));
+  });
+  
   const mapStories = (latestData) => {
     console.log(latestData.data.length);
     let storiesRender = document.querySelector("#stories");
