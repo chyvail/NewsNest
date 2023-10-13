@@ -18,12 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Search Functionality
 
-  let searchIcon = document.querySelector("#search-query");
+  let searchIcon = document.querySelectorAll("#search-query");
   let modal = new bootstrap.Modal(document.getElementById("exampleModal"));
   console.log(searchIcon);
-  searchIcon.addEventListener("click", () => {
-    modal.show();
-  });
+  searchIcon.forEach((element) =>
+    element.addEventListener("click", () => {
+      modal.show();
+    })
+  );
 
   let form = document.querySelector("form");
   form.addEventListener("submit", (e) => {
