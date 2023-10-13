@@ -24,10 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let form = document.querySelector("form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let searchValue = e.target.querySelector("#search-article").value;
+    let input = e.target.querySelector("#search-article");
+    let searchValue = input.value;
     fetch(`${apiUrl}&keywords=${searchValue}`)
     .then((res) => res.json())
     .then((latestData) => mapStories(latestData));
+    //modal.hide();
   });
   
   const mapStories = (latestData) => {

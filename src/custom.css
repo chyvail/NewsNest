@@ -71,7 +71,8 @@ ul {
   padding-left: 30px;
 }
 
-nav > div > ul > li:hover, #search-query {
+nav > div > ul > li:hover,
+#search-query {
   color: var(--primary-color);
   cursor: pointer;
 }
@@ -212,9 +213,20 @@ hr {
 .toast-body p {
   color: var(--black) !important;
 }
+
 @media screen and (max-width: 600px) {
   .nav-bar {
     justify-content: end;
+  }
+
+  .search-mobile {
+    font-size: 23px;
+  }
+
+  .nav-small {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .display-none-sm {
