@@ -1,5 +1,9 @@
 // dom content loaded event listener
 document.addEventListener("DOMContentLoaded", () => {
+  // Allow http call on Chrome
+  if (location.protocol == "https:") {
+    location.protocol = "http:";
+  }
   let apiKey = "545d54d22a1d2e11994701336242a056";
   let apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}`;
   let links = document.querySelectorAll("li");
@@ -27,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let input = e.target.querySelector("#search-article");
     let searchValue = input.value;
     fetch(`${apiUrl}&keywords=${searchValue}`)
-    .then((res) => res.json())
-    .then((latestData) => mapStories(latestData));
+      .then((res) => res.json())
+      .then((latestData) => mapStories(latestData));
     form.reset();
     //modal.hide();
   });
-  
+
   const mapStories = (latestData) => {
     console.log(latestData.data.length);
     let storiesRender = document.querySelector("#stories");
@@ -46,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "https://img.freepik.com/free-photo/top-view-old-french-newspaper-pieces_23-2149318857.jpg?w=1800&t=st=1697118921~exp=1697119521~hmac=a7cbfebd6578b839daf35fd4850eec18106aa1152927e8f33305175ef357cdaf";
       }
       storiesRender.innerHTML += `
-        <div class="col-sm-3 d-flex flex-column">
+        <div class="col-sm-3 d-flex flex-column custom-md-size">
             <div class="card flex-fill">
               <img class="card-img-top" src=${element.image} alt=@${element.author} />
               <div class="card-body">
@@ -60,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <hr>
               <div class="icons">
                 <div id="like" class="like">
-                    <i id="like-icon" class="fa-regular fa-heart"></i>
+                    <i id="like-icon" class="fa-regular fa-thumbs-up"></i>
                     <p class="count">0</p>
                 </div>
                 <div class="bookmark">
@@ -138,6 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show this by default if link hasn't been clicked
   fetch(`${apiUrl}&keywords=Africa`)
-  .then((res) => res.json())
-  .then((latestData) => mapStories(latestData));
+    .then((res) => res.json())
+    .then((latestData) => mapStories(latestData));
 });
