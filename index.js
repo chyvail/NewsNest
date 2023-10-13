@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(`${apiUrl}&keywords=${searchValue}`)
     .then((res) => res.json())
     .then((latestData) => mapStories(latestData));
+    form.reset();
     //modal.hide();
   });
   

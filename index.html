@@ -53,12 +53,16 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form class="was-validated" novalidate>
               <div class="mb-3">
                 <div class="text-center mb-3">
                   <label for="search-article" class="col-form-label">Search For An Article</label>
                 </div>
-                <input type="text" class="form-control mb-3 custom-form" id="search-article">
+                <div class="mb-2">
+                  <input type="text" class="form-control custom-form" placeholder="Search Article" id="search-article" required>
+                  <div class="valid-feedback mt-2">Valid.</div>
+                  <div class="invalid-feedback mt-2">Please fill out this field.</div>
+                </div>
                 <div class="modal-footer">
                   <button type="submit" class="w-100 btn custom-button">Search</button>
                 </div>
