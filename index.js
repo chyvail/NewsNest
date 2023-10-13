@@ -135,4 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     `;
   };
+
+  // Show this by default if link hasn't been clicked
+  fetch(`${apiUrl}&keywords=Africa`)
+  .then((res) => res.json())
+  .then((latestData) => mapStories(latestData));
 });
