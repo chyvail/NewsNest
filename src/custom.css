@@ -214,6 +214,19 @@ hr {
   color: var(--black) !important;
 }
 
+footer {
+  text-align: center;
+  background: var(--white);
+  padding: 30px;
+  margin-top: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
 /* Mobile Dropdown */
 
 .dropdown-menu.dropdown-menu-dark.show {
@@ -228,7 +241,7 @@ hr {
 }
 
 /* Medium Screens */
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .custom-md-size {
     flex: 0 0 auto !important;
     width: 50% !important;

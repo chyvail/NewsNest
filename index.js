@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="count">0</p>
                 </div>
                 <div class="bookmark">
-                    <i id="bookmark-icon" class="fa-regular fa-bookmark"></i>
+                    <i id="like-icon" class="fa-regular fa-bookmark"></i>
                     <p class="count">0</p>
                 </div>
               </div>
