@@ -34,8 +34,9 @@ git clone https://github.com/chyvail/NewsNest.git
 
 3. The Mobile View looks like this
 
-![NewsNest-Mobile](https://github.com/chyvail/NewsNest/assets/25295807/720417a7-a532-41a3-a3ff-96a390c78b0f)
-
+<p align="center" width="100%">
+    ![NewsNest-Mobile](https://github.com/chyvail/NewsNest/assets/25295807/720417a7-a532-41a3-a3ff-96a390c78b0f)
+</p>
 
 ## Contributions
 
