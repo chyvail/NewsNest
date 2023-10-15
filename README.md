@@ -37,3 +37,6 @@ git clone https://github.com/chyvail/NewsNest.git
 ![NewsNest-Mobile](https://github.com/chyvail/NewsNest/assets/25295807/720417a7-a532-41a3-a3ff-96a390c78b0f)
 
 
+## Contributions
+
+If you have any suggestions, enhancements, or bug fixes, feel free to create an issue or submit a pull request.
